@@ -79,8 +79,8 @@ def handle_delete(path):
 
 def main():
     description = """
-    Welcome to FileSystemCleaner. 
-    A CLI tool for file system profiling and cleanup of files.
+    Welcome to File System Buddy. 
+    A CLI tool for managing your file system.
     """
     parser = argparse.ArgumentParser(description=description)
     subparsers = parser.add_subparsers(dest="action", required=True)

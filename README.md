@@ -10,7 +10,7 @@ Installing is as simple as:
 
 1. Open terminal or shell, `cd ~`
 2. `git clone https://github.com/richyuh/fsbuddy.git`
-3. `pip install fsbuddy`
+3. `pip install ./fsbuddy`
 
 ## Usage
 The following operations are available:

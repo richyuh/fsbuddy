@@ -30,16 +30,7 @@ def get_dir_size(path):
 
 
 def handle_list(path, size=False, date=False):
-    paths = [] 
-    """
-    [
-        {
-            "path": ""
-            "size": 100
-            "date": utc
-        },
-    ]
-    """
+    paths = []
     with os.scandir(path) as it: 
         for entry in it:
             data = {

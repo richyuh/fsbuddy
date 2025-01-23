@@ -60,7 +60,8 @@ def handle_list(path, size=False, date=False):
         )
 
 
-def handle_delete(path):
+def handle_delete(path, soft=False):
+    # TODO: Implement soft delete
     try:
         os.remove(path)
         print(f"{os.path.abspath(path)} has been deleted.")
@@ -110,6 +111,11 @@ def main():
         default=".",
         help="Specify the path to delete files. Defaults to current directory."
     )
+    parser_delete.add_argument(
+        "--soft",
+        action="store_true",
+        help="Soft delete. Move path to Trash."
+    )
 
     args = parser.parse_args()
 
@@ -118,7 +124,7 @@ def main():
     elif args.action == "list":
         handle_list(args.path, size=args.size, date=args.date)
     elif args.action == "delete":
-        handle_delete(args.path)
+        handle_delete(args.path, soft=args.soft)
 
 
 if __name__ == "__main__":

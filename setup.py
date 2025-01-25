@@ -9,4 +9,7 @@ setup(
         ]
     },
     python_requires=">=3.8",
+    install_requires=[
+        "send2trash>=1.8.0"  # Ensure the minimum version is specified
+    ],
 )

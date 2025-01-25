@@ -2,6 +2,8 @@ import argparse
 import os
 import time
 
+from send2trash import send2trash
+
 
 def handle_size(path):
     size = get_size(path)
@@ -61,10 +63,12 @@ def handle_list(path, size=False, date=False):
 
 
 def handle_delete(path, soft=False):
-    # TODO: Implement soft delete
     try:
-        os.remove(path)
-        print(f"{os.path.abspath(path)} has been deleted.")
+        if soft:
+            send2trash(path)
+        else:
+            os.remove(path)
+            print(f"{os.path.abspath(path)} has been deleted.")
     except Exception as e:
         print(f"Failed to delete {path}, error: {e}")
 

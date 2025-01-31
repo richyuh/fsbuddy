@@ -1,5 +1,7 @@
 # fsbuddy
 
+https://pypi.org/project/fsbuddy/
+
 ## Description
 Welcome to File System Buddy!
 
